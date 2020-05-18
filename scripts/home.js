@@ -1,3 +1,4 @@
-function alertme(text) {
-	  alert(text);
+function navigate(text) {
+
+	window.location.href = text
 }

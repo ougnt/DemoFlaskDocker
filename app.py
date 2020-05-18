@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import send_file
 import os.path
 
 app = Flask(__name__)
@@ -13,5 +14,9 @@ def home():
 @app.route('/js/<path:path>')
 def get_js_sript(path):
 	return get_file('scripts/' + path)
+
+@app.route('/images/<path:path>')
+def get_image(path):
+	return send_file('photo/' + path, mimetype='image/gif')
 
 app.run(host='0.0.0.0', port=5000)
